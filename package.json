@@ -1,6 +1,6 @@
 {
   "name": "unstandard",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A point-free library for the standard objects",
   "main": "lib/index.js",
   "license": "MIT",
