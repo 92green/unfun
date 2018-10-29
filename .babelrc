@@ -1,0 +1,16 @@
+{
+    "presets": [
+        ["blueflag", {"browser": true, "library": true}]
+    ],
+    "ignore": [
+        "./lib",
+        "./example"
+    ],
+    "env": {
+        "production": {
+            "plugins": [
+                ["proto-babel-plugin-extract-flow-types", {"outDir": "lib"}]
+            ]
+        }
+    }
+}
