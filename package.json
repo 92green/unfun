@@ -9,7 +9,9 @@
     "type": "git",
     "url": "git+https://github.com/blueflag/unstandard.git"
   },
-  "files": ["lib"],
+  "files": [
+    "lib"
+  ],
   "bugs": {
     "url": "https://github.com/blueflag/unstandard/issues"
   },
@@ -24,5 +26,8 @@
     "babel-core": "^6.23.0",
     "babel-preset-blueflag": "^0.6.0",
     "blueflag-test": "^0.20.0"
+  },
+  "dependencies": {
+    "babel-plugin-extract-flow-types": "^1.0.0"
   }
 }
