@@ -1,19 +1,19 @@
 {
-  "name": "unstandard",
+  "name": "unprimitive",
   "version": "0.0.1",
-  "description": "A point-free library for the standard objects",
+  "description": "A point-free library for the primitive data",
   "main": "lib/index.js",
   "license": "MIT",
   "author": "Allan Hortle",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/blueflag/unstandard.git"
+    "url": "git+https://github.com/blueflag/unprimitive.git"
   },
   "files": [
     "lib"
   ],
   "bugs": {
-    "url": "https://github.com/blueflag/unstandard/issues"
+    "url": "https://github.com/blueflag/unprimitive/issues"
   },
   "private": false,
   "scripts": {
