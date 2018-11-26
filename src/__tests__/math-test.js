@@ -2,6 +2,7 @@
 import * as method from '../math/method';
 import * as standard from '../math/standard';
 
+jest.spyOn(Math, 'random');
 
 // Methods
 test.each([
@@ -60,6 +61,11 @@ test.each([
         expect(standard[name](bb)(aa)).toBe(expected);
     }
 );
+
+test('random()', () => {
+    standard.random()();
+    expect(Math.random).toHaveBeenCalled();
+})
 
 // Constants
 test.each([

@@ -19,7 +19,8 @@
   "scripts": {
     "prepublishOnly": "yarn build",
     "build": "rm -rf lib && NODE_ENV=production babel src --out-dir lib --ignore **/*-test.js",
-    "watch": "yarn build -w"
+    "watch": "yarn build -w",
+    "test": "yarn jest"
   },
   "devDependencies": {
     "babel-cli": "^6.23.0",
