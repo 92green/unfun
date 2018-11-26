@@ -26,9 +26,7 @@
     "babel-cli": "^6.23.0",
     "babel-core": "^6.23.0",
     "babel-preset-blueflag": "^0.6.0",
+    "babel-plugin-extract-flow-types": "^1.0.0",
     "blueflag-test": "^0.20.0"
-  },
-  "dependencies": {
-    "babel-plugin-extract-flow-types": "^1.0.0"
   }
 }
