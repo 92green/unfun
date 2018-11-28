@@ -1,6 +1,6 @@
 {
   "name": "unprimitive",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A point-free library for the primitive data",
   "main": "lib/index.js",
   "license": "MIT",
