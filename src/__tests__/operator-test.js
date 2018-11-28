@@ -50,22 +50,22 @@ describe('equals', () => {
 
 
 test('notEquals', () => {
-    expect(notEquals(3)(2)).toBe(3 !== 2);
-    expect(notEquals(true)(false)).toBeTruthy();
+    expect(notEquals(3)(2)).toBe(true);
+    expect(notEquals(true)(false)).toBe(true);
 });
 
 test('abstractEquals', () => {
-    expect(abstractEquals(3)(3)).toBeTruthy();
-    expect(abstractEquals(true)('true')).toBeTruthy();
+    expect(abstractEquals(3)(3)).toBe(true);
+    expect(abstractEquals(true)(1)).toBe(true);
 });
 
 test('abstractNotEquals', () => {
-    expect(abstractNotEquals(2)(3)).toBeTruthy();
-    expect(abstractNotEquals(false)('true')).toBeTruthy();
+    expect(abstractNotEquals(2)(3)).toBe(true);
+    expect(abstractNotEquals(false)(1)).toBe(true);
 });
 
-test('gt', () => expect(gt(2)(3)).toBeTruthy());
-test('lt', () => expect(lt(3)(2)).toBeTruthy());
+test('gt', () => expect(gt(2)(3)).toBe(true));
+test('lt', () => expect(lt(3)(2)).toBe(true));
 
 //gte
 test.each([
