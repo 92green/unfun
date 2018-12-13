@@ -1,0 +1,33 @@
+{
+  "name": "unprimitive",
+  "version": "0.1.2",
+  "description": "A point-free library for the primitive data",
+  "main": "lib/index.js",
+  "license": "MIT",
+  "author": "Allan Hortle",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blueflag/unprimitive.git"
+  },
+  "files": [
+    "lib"
+  ],
+  "bugs": {
+    "url": "https://github.com/blueflag/unprimitive/issues"
+  },
+  "private": false,
+  "scripts": {
+    "prepublishOnly": "yarn build",
+    "build": "rm -rf lib && NODE_ENV=production babel src --out-dir lib --ignore **/*-test.js",
+    "watch": "yarn build -w",
+    "test": "yarn jest",
+    "test-all": "yarn test"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.23.0",
+    "babel-core": "^6.23.0",
+    "babel-preset-blueflag": "^0.6.0",
+    "babel-plugin-extract-flow-types": "^1.0.0",
+    "blueflag-test": "^0.20.0"
+  }
+}
