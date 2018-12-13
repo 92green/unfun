@@ -1,6 +1,6 @@
 // @flow
-export const toExponential = (aa: number) => (bb: number) => bb.toExponential(aa);
-export const toFixed = (aa: number) => (bb: number) => bb.toFixed(aa);
-export const toPrecision = (aa: number) => (bb: number) => bb.toPrecision(aa);
-export const toString = (aa: number) => (bb: number) => bb.toString(aa);
-export const toLocaleString = () => (bb: number) => bb.toLocaleString();
+export const singlePipe = (ff: Function, gg: Function) => (item: *) => gg(ff(item));
+export const singleCompose = (ff: Function, gg: Function) => (item: *) => ff(gg(item));
+
+export const singleAsyncPipe = (ff: Function, gg: Function) => async (item: *) => await gg(await ff(item));
+export const singleAsyncCompose = (ff: Function, gg: Function) => async (item: *) => await ff(await gg(item));
