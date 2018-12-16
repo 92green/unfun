@@ -4,7 +4,7 @@ type V = *;
 
 // Primitive
 export const _maybe = (f: F) => (v: V) => v != null ? f(v) : v;
-export const _wait = (f: F) => async (v: V) => await f(await v);
+export const _async = (f: F) => async (v: V) => await f(await v);
 export const _pipe = (f: F, g: F) => (v: V) => g(f(v));
 export const _compose = (f: F, g: F) => (v: V) => f(g(v));
 
@@ -18,8 +18,8 @@ export const _multiEndWith = (f: F) => (a: Array<*>) => {
 };
 
 // Higher order
-export const _asyncPipe = _make(_wait)(_pipe);
-export const _asyncCompose = _make(_wait)(_compose);
+export const _asyncPipe = _make(_async)(_pipe);
+export const _asyncCompose = _make(_async)(_compose);
 export const _maybePipe = _make(_maybe)(_pipe);
 export const _maybeCompose = _make(_maybe)(_compose);
 
