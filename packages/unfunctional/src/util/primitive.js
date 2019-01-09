@@ -2,17 +2,37 @@
 type F = Function;
 type V = *;
 
-// Primitive
+// Type Functions
+export const _identity = (v: V): V => v;
 export const _maybe = (f: F) => (v: V) => v != null ? f(v) : v;
 export const _async = (f: F) => async (v: V) => await f(await v);
+
+// Composition Functions
 export const _pipe = (f: F, g: F) => (v: V) => g(f(v));
 export const _compose = (f: F, g: F) => (v: V) => f(g(v));
 
+// Combine a type and a composition function
 export const _make = (type: F) => (composer: F) => (f: F, g: F) => composer(type(f), type(g));
 
-export const _multi = (f: F) => (...a: Array<F>) => a.reduce(f);
-export const _multiWith= (f: F) => (v: V, ...a: Array<F>) => a.reduce(f)(v);
-export const _multiEndWith = (f: F) => (a: Array<*>) => {
+//
+// Multi Functions
+//
+export const _multi = (f: F) => (...a: Array<F>) => {
+    if(a.length === 0) {
+        a = [_identity];
+    }
+    return a.reduce(f);
+};
+export const _multiWith = (f: F) => (v: V, ...a: Array<F>) => {
+    if(a.length === 0) {
+        return v;
+    }
+    return a.reduce(f)(v);
+};
+export const _multiEndWith = (f: F) => (...a: Array<*>) => {
+    if(a.length === 1) {
+        return a[0];
+    }
     const v = a.pop();
     return a.reduce(f)(v);
 };

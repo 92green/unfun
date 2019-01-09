@@ -1,7 +1,7 @@
-// @flow
-import {_pipe} from '../primitive';
 import {_compose} from '../primitive';
+import {_pipe} from '../primitive';
 import {_maybe} from '../primitive';
+import {_identity} from '../primitive';
 import {_async} from '../primitive';
 
 import {_make} from '../primitive';
@@ -45,10 +45,79 @@ describe('pipe / compose', () => {
 });
 
 describe('types', () => {
+
+    test('maybe only executes function if value is not null or undefined', () => {
+        const spy = jest.fn();
+        _maybe(spy)('foo');
+        _maybe(spy)(null);
+        _maybe(spy)(undefined);
+        expect(spy).toHaveBeenCalledWith('foo');
+        expect(spy).toHaveBeenCalledTimes(1);
+    });
+
+    test('async will await functions and values', () => {
+        const id = x => x;
+        expect(_async(id)(2)).resolves.toBe(2);
+        expect(_async(id)(Promise.resolve(2))).resolves.toBe(2);
+        expect(_async(squarePromise)(2)).resolves.toBe(4);
+        expect(_async(reject)(2)).rejects.toBe('REJECTED');
+    });
 });
 
 describe('make / multi', () => {
+    const f = () => 1;
+    const g = () => 2;
+    const id = x => x;
+
+    test('make will call a type for f,g and pass that to the composer', () => {
+        const type = jest.fn(() => 'FOO');
+        const composer = jest.fn();
+        _make(type)(composer)(f, g);
+        expect(type).toHaveBeenCalledWith(f);
+        expect(type).toHaveBeenCalledWith(g);
+        expect(composer).toHaveBeenCalledWith('FOO', 'FOO');
+    });
+
+    test('multi will reduce an array of functions over a predicate', () => {
+        const predicate = jest.fn();
+        _multi(predicate)(f, g, f, g);
+        expect(predicate).toHaveBeenCalledTimes(3);
+    });
+
+    test('multi args array will default to an Array<identity>', () => {
+        const predicate = jest.fn();
+        const result = _multi(predicate)();
+        expect(predicate).toHaveBeenCalledTimes(0);
+        expect(result).toEqual(_identity);
+    });
+
+    test('multiWith will reduce functions over a predicate starting with value', () => {
+        const predicate = jest.fn(_pipe);
+        const result = _multiWith(predicate)('FOO', f, g, () => 'fizz');
+        expect(predicate).toHaveBeenCalledTimes(2);
+        expect(result).toBe('fizz');
+    });
+
+    test('multiWith args array will default to an Array<identity>', () => {
+        const predicate = jest.fn();
+        const result = _multiWith(predicate)('foo');
+        expect(predicate).toHaveBeenCalledTimes(0);
+        expect(result).toEqual('foo');
+    });
+
+    test('multiEndWith will reduce functions over a predicate starting with the last value', () => {
+        const predicate = jest.fn(_pipe);
+        const result = _multiEndWith(predicate)(f, g, () => 'fizz', 'FOO');
+        expect(predicate).toHaveBeenCalledTimes(2);
+        expect(result).toBe('fizz');
+    });
+
+    test('multiEndWith args array will default to an Array<identity>', () => {
+        const predicate = jest.fn();
+        const result = _multiEndWith(predicate)('foo');
+        expect(predicate).toHaveBeenCalledTimes(0);
+        expect(result).toEqual('foo');
+    });
+
 });
 
-describe('higher order pipes', () => {
-});
