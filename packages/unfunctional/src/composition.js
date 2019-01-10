@@ -10,8 +10,8 @@ import {_asyncMaybeCompose} from './util/primitive';
 import {_multi} from './util/primitive';
 import {_multiWith} from './util/primitive';
 
-export const pipe = _multi(_pipe);
-export const compose = _multi(_compose);
+export const pipe: $ComposeReverse = _multi(_pipe);
+export const compose: $Compose = _multi(_compose);
 export const maybePipe = _multi(_maybePipe);
 export const maybeCompose = _multi(_maybeCompose);
 export const asyncPipe = _multi(_asyncPipe);
@@ -27,3 +27,4 @@ export const asyncPipeWith = _multiWith(asyncPipe);
 export const asyncComposeWith = _multiWith(asyncCompose);
 export const asyncMaybePipeWith = _multiWith(asyncMaybePipe);
 export const asyncMaybeComposeWith = _multiWith(asyncMaybeCompose);
+

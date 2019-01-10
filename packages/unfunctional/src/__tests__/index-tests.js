@@ -19,7 +19,7 @@ describe('exports', () => {
         ['maybePipeWith'],
         ['maybeComposeWith'],
         ['asyncMaybePipeWith'],
-        ['asyncMaybeComposeWith'],
+        ['asyncMaybeComposeWith']
     ])(
         `import {%s} from 'unfunctional'`,
         (name) => {

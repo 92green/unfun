@@ -56,7 +56,7 @@ describe('pipe', () => {
     });
 
     test('pipe returns the first function if given only one', () => {
-        const fn = () => {};
+        const fn = (x) => {};
 
         expect(pipe(fn)).toBe(fn);
     });

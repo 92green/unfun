@@ -1,35 +1,31 @@
-// @flow
-type F = Function;
-type V = *;
-
 // Type Functions
-export const _identity = (v: V): V => v;
-export const _maybe = (f: F) => (v: V) => v != null ? f(v) : v;
-export const _async = (f: F) => async (v: V) => await f(await v);
+export const _identity = (v) => v;
+export const _maybe = (f) => (a) => a != null ? f(a) : a;
+export const _async = (f) => async (a) => await f(await a);
 
 // Composition Functions
-export const _pipe = (f: F, g: F) => (v: V) => g(f(v));
-export const _compose = (f: F, g: F) => (v: V) => f(g(v));
+export const _pipe = (f, g) => (a) => g(f(a));
+export const _compose = (f, g) => (a) => f(g(a));
 
 // Combine a type and a composition function
-export const _make = (type: F) => (composer: F) => (f: F, g: F) => composer(type(f), type(g));
+export const _make = (type) => (composer) => (f, g) => composer(type(f), type(g));
 
-//
 // Multi Functions
-//
-export const _multi = (f: F) => (...a: Array<F>) => {
+export const _multi = (f) => (...a) => {
     if(a.length === 0) {
         a = [_identity];
     }
     return a.reduce(f);
 };
-export const _multiWith = (f: F) => (v: V, ...a: Array<F>) => {
+
+export const _multiWith = (f) => (v, ...a) => {
     if(a.length === 0) {
         return v;
     }
     return a.reduce(f)(v);
 };
-export const _multiEndWith = (f: F) => (...a: Array<*>) => {
+
+export const _multiEndWith = (f) => (...a) => {
     if(a.length === 1) {
         return a[0];
     }
@@ -46,4 +42,10 @@ export const _maybeCompose = _make(_maybe)(_compose);
 // Higher-higher order
 export const _asyncMaybePipe = _make(_maybe)(_asyncPipe);
 export const _asyncMaybeCompose = _make(_maybe)(_asyncCompose);
+
+
+
+
+
+
 
