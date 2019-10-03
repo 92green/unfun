@@ -1,14 +1,14 @@
 // @flow
-import {_pipe} from './util/primitive';
-import {_compose} from './util/primitive';
-import {_maybePipe} from './util/primitive';
-import {_maybeCompose} from './util/primitive';
-import {_asyncPipe} from './util/primitive';
-import {_asyncCompose} from './util/primitive';
-import {_asyncMaybePipe} from './util/primitive';
-import {_asyncMaybeCompose} from './util/primitive';
-import {_multi} from './util/primitive';
-import {_multiWith} from './util/primitive';
+import {_pipe} from './primitive';
+import {_compose} from './primitive';
+import {_maybePipe} from './primitive';
+import {_maybeCompose} from './primitive';
+import {_asyncPipe} from './primitive';
+import {_asyncCompose} from './primitive';
+import {_asyncMaybePipe} from './primitive';
+import {_asyncMaybeCompose} from './primitive';
+import {_multi} from './primitive';
+import {_multiWith} from './primitive';
 
 import type {Pipe} from './compositionTypes';
 import type {Compose} from './compositionTypes';

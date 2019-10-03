@@ -1,4 +1,13 @@
 // @flow
+
+//
+// Standard
+export const fromCharCode = () => (aa: number) => String.fromCharCode(aa);
+export const fromCodePoint = () => (aa: number) => String.fromCodePoint(aa);
+
+
+//
+// Methods
 export const charAt = (bb: number) => (aa: string) => aa.charAt(bb);
 export const charCodeAt = (bb: number) => (aa: string) => aa.charCodeAt(bb);
 export const codePointAt = (bb: number) => (aa: string) => aa.codePointAt(bb);
@@ -28,3 +37,4 @@ export const toLocaleUpperCase = () => (aa: string) => aa.toLocaleUpperCase();
 export const toLowerCase = () => (aa: string) => aa.toLowerCase();
 export const toUpperCase = () => (aa: string) => aa.toUpperCase();
 export const valueOf = () => (aa: string) => aa.valueOf();
+

@@ -1,3 +1,9 @@
+// @flow
+
+
+//
+// Standard
+
 export const abs = () => (aa) => Math.abs(aa);
 export const acos = () => (aa) => Math.acos(aa);
 export const acosh = () => (aa) => Math.acosh(aa);
@@ -33,6 +39,16 @@ export const sqrt = () => (aa) => Math.sqrt(aa);
 export const tan = () => (aa) => Math.tan(aa);
 export const tanh = () => (aa) => Math.tanh(aa);
 export const trunc = () => (aa) => Math.trunc(aa);
+
+
+//
+// Methods
+
+export const toExponential = (aa: number) => (bb: number) => bb.toExponential(aa);
+export const toFixed = (aa: number) => (bb: number) => bb.toFixed(aa);
+export const toPrecision = (aa: number) => (bb: number) => bb.toPrecision(aa);
+export const toString = (aa: number) => (bb: number) => bb.toString(aa);
+export const toLocaleString = () => (bb: number) => bb.toLocaleString();
 
 
 // Constants
