@@ -21,13 +21,20 @@
     "build": "rm -rf lib && NODE_ENV=production babel src --out-dir lib --ignore **/*-test.js",
     "watch": "yarn build -w",
     "test": "yarn jest",
-    "test-all": "yarn test"
+    "test-all": "yarn test",
+    "size": "size-limit"
   },
   "devDependencies": {
+    "@size-limit/preset-app": "^2.1.6",
     "babel-cli": "^6.23.0",
     "babel-core": "^6.23.0",
     "babel-plugin-extract-flow-types": "^1.0.0",
     "babel-preset-blueflag": "^0.6.0",
     "blueflag-test": "^0.20.0"
-  }
+  },
+  "size-limit": [
+    {
+      "path": "src/index.js"
+    }
+  ]
 }
