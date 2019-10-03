@@ -10,21 +10,39 @@ import {_asyncMaybeCompose} from './util/primitive';
 import {_multi} from './util/primitive';
 import {_multiWith} from './util/primitive';
 
-export const pipe: $ComposeReverse = _multi(_pipe);
-export const compose: $Compose = _multi(_compose);
-export const maybePipe = _multi(_maybePipe);
-export const maybeCompose = _multi(_maybeCompose);
-export const asyncPipe = _multi(_asyncPipe);
-export const asyncCompose = _multi(_asyncCompose);
-export const asyncMaybePipe = _multi(_asyncMaybePipe);
-export const asyncMaybeCompose = _multi(_asyncMaybeCompose);
+import type {Pipe} from './compositionTypes';
+import type {Compose} from './compositionTypes';
+import type {MaybePipe} from './compositionTypes';
+import type {MaybeCompose} from './compositionTypes';
+import type {AsyncPipe} from './compositionTypes';
+import type {AsyncCompose} from './compositionTypes';
+import type {AsyncMaybePipe} from './compositionTypes';
+import type {AsyncMaybeCompose} from './compositionTypes';
+import type {PipeWith} from './compositionTypes';
+import type {ComposeWith} from './compositionTypes';
+import type {MaybePipeWith} from './compositionTypes';
+import type {MaybeComposeWith} from './compositionTypes';
+import type {AsyncPipeWith} from './compositionTypes';
+import type {AsyncComposeWith} from './compositionTypes';
+import type {AsyncMaybePipeWith} from './compositionTypes';
+import type {AsyncMaybeComposeWith} from './compositionTypes';
 
-export const pipeWith = _multiWith(pipe);
-export const composeWith = _multiWith(compose);
-export const maybePipeWith = _multiWith(maybePipe);
-export const maybeComposeWith = _multiWith(maybeCompose);
-export const asyncPipeWith = _multiWith(asyncPipe);
-export const asyncComposeWith = _multiWith(asyncCompose);
-export const asyncMaybePipeWith = _multiWith(asyncMaybePipe);
-export const asyncMaybeComposeWith = _multiWith(asyncMaybeCompose);
+
+export const pipe: Pipe = _multi(_pipe);
+export const compose: Compose= _multi(_compose);
+export const maybePipe: MaybePipe  = _multi(_maybePipe);
+export const maybeCompose: MaybeCompose = _multi(_maybeCompose);
+export const asyncPipe: AsyncPipe = _multi(_asyncPipe);
+export const asyncCompose: AsyncCompose = _multi(_asyncCompose);
+export const asyncMaybePipe: AsyncMaybePipe = _multi(_asyncMaybePipe);
+export const asyncMaybeCompose: AsyncMaybeCompose= _multi(_asyncMaybeCompose);
+
+export const pipeWith: PipeWith = _multiWith(pipe);
+export const composeWith: ComposeWith = _multiWith(compose);
+export const maybePipeWith: MaybePipeWith = _multiWith(maybePipe);
+export const maybeComposeWith: MaybeComposeWith = _multiWith(maybeCompose);
+export const asyncPipeWith: AsyncPipeWith = _multiWith(asyncPipe);
+export const asyncComposeWith: AsyncComposeWith = _multiWith(asyncCompose);
+export const asyncMaybePipeWith: AsyncMaybePipeWith = _multiWith(asyncMaybePipe);
+export const asyncMaybeComposeWith: AsyncMaybeComposeWith = _multiWith(asyncMaybeCompose);
 
