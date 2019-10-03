@@ -1,6 +1,6 @@
 {
   "name": "unfunctional",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A point-free library for the functions",
   "main": "lib/index.js",
   "license": "MIT",
@@ -26,8 +26,8 @@
   "devDependencies": {
     "babel-cli": "^6.23.0",
     "babel-core": "^6.23.0",
-    "babel-preset-blueflag": "^0.6.0",
     "babel-plugin-extract-flow-types": "^1.0.0",
+    "babel-preset-blueflag": "^0.6.0",
     "blueflag-test": "^0.20.0"
   }
 }
