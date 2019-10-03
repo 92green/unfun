@@ -1,6 +1,6 @@
 //@flow
-import * as method from '../string/method';
-import * as standard from '../string/standard';
+import * as method from '../string';
+import * as standard from '../string';
 
 // Methods
 test.each([

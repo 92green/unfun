@@ -1,6 +1,6 @@
 //@flow
-import * as method from '../math/method';
-import * as standard from '../math/standard';
+import * as method from '../math';
+import * as standard from '../math';
 
 jest.spyOn(Math, 'random');
 
