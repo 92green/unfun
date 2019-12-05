@@ -1,20 +1,13 @@
 // @flow
 
-export {pipe} from './composition';
-export {compose} from './composition';
-export {maybePipe} from './composition';
-export {maybeCompose} from './composition';
-export {asyncPipe} from './composition';
-export {asyncCompose} from './composition';
-export {asyncMaybePipe} from './composition';
-export {asyncMaybeCompose} from './composition';
+//import * as composition from './composition';
+//import * as math from './math';
+//import * as string from './string';
+//import * as operator from './operator';
 
-export {pipeWith} from './composition';
-export {composeWith} from './composition';
-export {maybePipeWith} from './composition';
-export {maybeComposeWith} from './composition';
-export {asyncPipeWith} from './composition';
-export {asyncComposeWith} from './composition';
-export {asyncMaybePipeWith} from './composition';
-export {asyncMaybeComposeWith} from './composition';
+//export {composition};
+//export {math};
+//export {string};
+//export {operator};
+export * from './composition';
 
