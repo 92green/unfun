@@ -1,3 +1,4 @@
+// @flow
 import {_compose} from '../primitive';
 import {_pipe} from '../primitive';
 import {_maybe} from '../primitive';
