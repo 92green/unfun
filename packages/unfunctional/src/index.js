@@ -18,3 +18,5 @@ export {asyncComposeWith} from './composition';
 export {asyncMaybePipeWith} from './composition';
 export {asyncMaybeComposeWith} from './composition';
 
+// experimental
+export {asyncMap} from './iteration';
