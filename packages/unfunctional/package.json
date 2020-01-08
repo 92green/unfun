@@ -1,6 +1,6 @@
 {
   "name": "unfunctional",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "A point-free library for the functions",
   "main": "lib/index.js",
   "license": "MIT",
